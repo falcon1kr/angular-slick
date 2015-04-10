@@ -1,5 +1,5 @@
 /*
- * derived from https://github.com/vasyabigi/angular-slick
+ * https://github.com/vasyabigi/angular-slick
  */
 (function () {
 'use strict';
