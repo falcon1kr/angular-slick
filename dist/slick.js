@@ -21,8 +21,11 @@ angular.module('slick', [])
     };
 
     function fullCleanup () {
+      if (initTimeout) $timeout.cancel(initTimeout);
+      initTimeout = null;
       elem.off('init afterChange');
       destroySlick();
+      isInitialized = false;
     };
 
     function initializeSlick () {
@@ -156,6 +159,7 @@ angular.module('slick', [])
   return {
     restrict: 'EA',
     scope: {
+      slickId: '@',
       initOnload: '@',
       data: '=',
       currentIndex: '=',
